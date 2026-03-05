@@ -7,11 +7,10 @@ Build a predictive model using customer reviews. The model analyzes review text,
 This project develops a machine learning model that predicts customer recommendations based on product review data. By using natural language processing (NLP) tools, we aim to understand what drives customer recommendations for a product and predict customer behavior based on product attributes and customer review comments.
 
 ## Structure
-
+.
 ├── data/
 
 │   └── review.csv              # Raw dataset containing customer reviews and metadata
-
 ├── dsnd_pipeline_project.ipynb # Main Jupyter notebook containing:
 
 │   ├── Data Exploration
@@ -44,11 +43,25 @@ Several visualizations were developed to understand the data.
 ## Model Training
 
 - Random Forest Classifier with default hyperparameter setting was used to train the model.
-- Model accuracy is 0.845 as validated using testing dataset.
+- Model accuracy is 0.845 as validated using testing dataset. As the dataset is inbalanced (majority is positive), accuracy alone is insufficient for evaluating model performance. Therefore, additional metrics including precision, recall, F1-score, and ROC-AUC were examined.
+
+- **Accuracy**: 0.845
+- **Precision**: 0.841
+- **Recall**: 0.845
+- **F1 score**: 0.799
+- **ROC-AUC**: 0.899
+
+- The relatively lower F1-score (0.799) compared to accuracy (0.845) suggests some imbalance in precision-recall trade-off, highlighting the need for model optimization.
 
 ## Model Fine-Tuning
 
 - Random Forest Classifier hyperparameters were randomly combined.
 - Instead of cross-validation, I set up 8/2 split of training/test dataset and run each combination once. This is because it took too long to run multiple times.
 - The best combination of hyperparameters were selected - n_estimators (decision tree) = 100, max_features = 200. 
-- The accuracy is improved slightly to 0.850.
+- The accuracy, recall and f1 scoar are slightly improved; while precision is slightly lower. The slight decrease in precision (-0.003) is offset by gains in recall, resulting in net positive improvement in the F1-score. The ROC-AUC didn't change and stays at high value 0.899, confirming the model is reliable.
+
+- **Accuracy**: 0.850
+- **Precision**: 0.838
+- **Recall**: 0.850
+- **F1 score**: 0.814
+- **ROC-AUC**: 0.899
