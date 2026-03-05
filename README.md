@@ -9,14 +9,19 @@ This project develops a machine learning model that predicts customer recommenda
 ## Structure
 
 ├── data/
-│ └── review.csv # Raw datasets containing customer reviews and metadata
+
+│   └── review.csv              # Raw dataset containing customer reviews and metadata
+
 ├── dsnd_pipeline_project.ipynb # Main Jupyter notebook containing:
-│ # - Data Exploration
-│ # - Building Pipeline
-│ # - Training Pipeline
-│ # - Fine-Tuning Pipeline
-├── requirements.txt # Python dependencies required for the project
-└── README.md # Project documentation
+
+│   ├── Data Exploration
+│   ├── Building Pipeline
+│   ├── Training Pipeline
+│   └── Fine-Tuning Pipeline
+
+├── requirements.txt            # Python dependencies required for the project
+
+└── README.md                   # Project documentation
 
 ## Data Exploration
 
